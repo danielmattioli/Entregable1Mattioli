@@ -16,18 +16,18 @@ class Martillero(models.Model):
     Apellido = CharField(max_length=40)
     dni = IntegerField()
 
-class Ventas(models.Model):
+class Venta(models.Model):
     nombremartillero = CharField(max_length=40)
     comprador = CharField(max_length=40)
 
-class Alquileres(models.Model):
+class Alquiler(models.Model):
     inquilino = CharField(max_length=40)
     dueño = CharField(max_length=40)
 
 class Contacto(models.Model):
     nombre = CharField(max_length=40)
     apellido = CharField(max_length=40)
-    email = EmailField()
+    email = EmailField(max_length = 254)
     telefono = IntegerField()
     mensaje = CharField(max_length=100)
 
