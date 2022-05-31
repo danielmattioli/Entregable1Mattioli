@@ -1,33 +1,31 @@
-from pyexpat import model
 from django.db import models
-from django.forms import BooleanField, CharField, EmailField, IntegerField
 
 # Create your models here.
 
 class Propiedad(models.Model):
-    titular = CharField(max_length=40)
-    ubicacion = CharField(max_length=40)
-    dimensiones = CharField(max_length=30)
-    poseecartel = BooleanField()
+    titular = models.CharField(max_length=40)
+    ubicacion = models.CharField(max_length=40)
+    dimensiones = models.CharField(max_length=30)
+    poseecartel = models.BooleanField()
 
 
 class Martillero(models.Model):
-    nombre = CharField(max_length=40)
-    Apellido = CharField(max_length=40)
-    dni = IntegerField()
+    nombre = models.CharField(max_length=40)
+    Apellido = models.CharField(max_length=40)
+    dni = models.IntegerField()
 
 class Venta(models.Model):
-    nombremartillero = CharField(max_length=40)
-    comprador = CharField(max_length=40)
+    nombremartillero = models.CharField(max_length=40)
+    comprador = models.CharField(max_length=40)
 
 class Alquiler(models.Model):
-    inquilino = CharField(max_length=40)
-    dueño = CharField(max_length=40)
+    inquilino = models.CharField(max_length=40)
+    dueño = models.CharField(max_length=40)
 
 class Contacto(models.Model):
-    nombre = CharField(max_length=40)
-    apellido = CharField(max_length=40)
-    email = EmailField(max_length = 254)
-    telefono = IntegerField()
-    mensaje = CharField(max_length=100)
+    nombre = models.CharField(max_length=40)
+    apellido = models.CharField(max_length=40)
+    email = models.EmailField(max_length = 254)
+    telefono = models.IntegerField()
+    mensaje = models.CharField(max_length=100)
 
