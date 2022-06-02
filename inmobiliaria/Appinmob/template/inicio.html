@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Inicio</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
                 
                 <!--menu desplegable-->
                 <li class="nav-item dropdown">
@@ -28,8 +28,8 @@
                     Propiedades
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Buscar una Propiedad</a></li>
-                        <li><a class="dropdown-item" href="#">Cargar Nueva Propiedad</a></li>
+                        <li><a class="dropdown-item" href="{% url 'formulario_consultas' %}">Buscar una Propiedad</a></li>
+                        <li><a class="dropdown-item" href="{% url 'formulario_alta_propiedad' %}">Cargar Nueva Propiedad</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -38,7 +38,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Buscar una Venta</a></li>
-                            <li><a class="dropdown-item" href="#">Cargar Nueva Venta</a></li>
+                            <li><a class="dropdown-item" href="{% url 'formulario_alta_venta' %}">Cargar Nueva Venta</a></li>
                         </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -47,7 +47,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Buscar un Alquiler</a></li>
-                            <li><a class="dropdown-item" href="#">Cargar Nuevo Alquiler</a></li>
+                            <li><a class="dropdown-item" href="{% url 'formulario_alta_alquiler' %}">Cargar Nuevo Alquiler</a></li>
                         </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,10 +56,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Buscar un Martillero</a></li>
-                            <li><a class="dropdown-item" href="#">Cargar Nuevo Martillero</a></li>
+                            <li><a class="dropdown-item" href="{% url 'formulario_alta_martillero' %}">Cargar Nuevo Martillero</a></li>
                         </ul>
                 </li>
-                <a class="navbar-brand" href="#!">Contáctanos</a>
+                <a class="navbar-brand" href="{% url 'formulario_alta_contacto' %}">Contáctanos</a>
         <!--Fin del menu desplegable-->
         </nav>
 
@@ -85,11 +85,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        {% block contenido %}
+                {% block contenido %}
 
-        {% endblock %}
+                {% endblock %}
+            </div>
+            
+        </header>
+
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">

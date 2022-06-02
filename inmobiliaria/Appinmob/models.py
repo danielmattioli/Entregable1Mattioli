@@ -6,7 +6,7 @@ class Propiedad(models.Model):
     titular = models.CharField(max_length=40)
     ubicacion = models.CharField(max_length=40)
     dimensiones = models.CharField(max_length=30)
-    poseecartel = models.BooleanField()
+    poseecartel = models.CharField(max_length=2)
 
 
 class Martillero(models.Model):

@@ -1,0 +1,15 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="buscartitular" method="POST">
+    {% csrf_token %}
+
+    <p>Titular de la propiedad:</p>
+    <input type="text" name = "titular" required>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="alta_venta" method="POST">
+    {% csrf_token %}
+    <p>Nombre del Martillero que realizó la venta:</p>
+    <input type="text" name="nombremartillero" required>
+    <p>Nombre del comprador:</p>
+    <input type="text" name="comprador" required>
+    
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

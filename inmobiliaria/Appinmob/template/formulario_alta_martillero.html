@@ -1,0 +1,19 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="alta_martillero" method="POST">
+    {% csrf_token %}
+    <p>Nombre del Martillero:</p>
+    <input type="text" name="nombre" required>
+    <p>Apellido del martillero:</p>
+    <input type="text" name="Apellido" required>
+    <p>Dni del martillero:</p>
+    <input type="number" name="dni" required>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="alta_contacto" method="POST">
+    {% csrf_token %}
+    <p>Nombre</p>
+    <input type="text" name="nombre" required>
+    <p>Apellido</p>
+    <input type="text" name="apellido" required>
+    <p>Email</p>
+    <input type="email" name="email" required>
+    <p>Teléfono</p>
+    <input type="number" name="telefono" required>   
+    <p></p>
+    <p>Consulta:</p>
+        <textarea name="mensaje" rows="5" cols="50"> </textarea>
+    
+    <input type="submit" value="Enviar consulta">
+</form>
+
+{% endblock %}

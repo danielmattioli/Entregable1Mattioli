@@ -1,0 +1,20 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="alta_propiedad" method="POST">
+    {% csrf_token %}
+    <p>Titular:</p>
+    <input type="text" name="titular" required>
+    <p>Ubicación:</p>
+    <input type="text" name="ubicacion" required>
+    <p>Dimensiones:</p>
+    <input type="text" name="dimensiones" required>
+    <p>¿Posee Cartel? (s/n): <input type="text" name = "poseecartel"></p>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}
