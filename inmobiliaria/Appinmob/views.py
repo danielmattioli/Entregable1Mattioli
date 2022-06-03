@@ -8,14 +8,24 @@ from Appinmob.forms import *
 def inicio(request):
     return render(request, "inicio.html")
 
-def consulta_propiedades(request):
-    return render(request, "formulario_consultas.html")
+def buscar_propiedad(request):
+    return render (request, "buscar_propiedad.html")
+"""
+def buscar_pro(request):
+    if request.method == "POST":
+        if request.POST['dimensiones']:
+            dimensiones= request.POST['dimensiones']
+            Propiedades=Propiedad.objects.filter(titular__icontains = dimensiones)
+            return render(request, "resultado_busqueda_propiedades.html", {"Propiedades": Propiedades})
+        else:
+            #return HttpResponse("no busco nada!")
+            return render(request, "error.html")
+    
+    
+    return render(request, "formulario_buscar_propiedad.html")
+"""
 
-def buscartitular(request):
-    db = Propiedad.objects.all()
-    datos ={"datos": db}
-    return render(request, "muestraconsulta.html", datos)
-
+# lo dejo asi para mostrar otra forma de cargar datos y tenerlo sin filtro para futuras pruebas
 def alta_propiedad(request):
     if request.method == "POST":
         db= Propiedad(titular=request.POST['titular'], ubicacion=request.POST['ubicacion'], dimensiones=request.POST['dimensiones'], poseecartel=request.POST['poseecartel'])
@@ -23,7 +33,7 @@ def alta_propiedad(request):
         return render(request, "formulario_alta_propiedad.html")
 
     return render (request, "formulario_alta_propiedad.html")
-
+#carga las ventas realizadas en la db
 def alta_venta(request):
     if request.method == "POST":
         datos_formulario = Form_venta(request.POST)
@@ -34,6 +44,7 @@ def alta_venta(request):
         return render(request, "formulario_alta_venta.html")
     return render(request, "formulario_alta_venta.html")
 
+#carga las propiedades alquiladas en una db
 def alta_alquiler(request):
     if request.method == "POST":
         datos_formulario = Form_alquiler(request.POST)
@@ -44,6 +55,7 @@ def alta_alquiler(request):
         return render(request, "formulario_alta_alquiler.html")
     return render(request, "formulario_alta_alquiler.html")
 
+#carga nuevos martilleros en la db
 def alta_martillero(request):
     if request.method == "POST":
         datos_formulario = Form_martillero(request.POST)
@@ -54,6 +66,7 @@ def alta_martillero(request):
         return render(request, "formulario_alta_martillero.html")
     return render(request, "formulario_alta_martillero.html")
 
+#carga nuevas consultas en la base de datos
 def alta_contacto(request):
     if request.method == "POST":
         datos_formulario = Form_contacto(request.POST)
