@@ -12,3 +12,8 @@ PROPIEDADES----->BUSCAR                                 VENTAS----->BUSCAR
 ALQUILLERES----->BUSCAR                              MARTILLEROS------>BUSCAR
           |----->CARGAR NUEVO DATO                              |----->CARGAR NUEVO DATO
           
+
+
+PASSWORD DE ADMINISTRADOR DE DJANGO:
+USER: daniel
+PASS: danieldaniel
