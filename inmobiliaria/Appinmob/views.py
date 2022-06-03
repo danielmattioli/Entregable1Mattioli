@@ -10,7 +10,9 @@ def inicio(request):
 
 def buscar_propiedad(request):
     return render (request, "buscar_propiedad.html")
-"""
+
+#Verificar codigo de busqueda. posee falla aun no encontrada
+
 def buscar_pro(request):
     if request.method == "POST":
         if request.POST['dimensiones']:
@@ -23,7 +25,7 @@ def buscar_pro(request):
     
     
     return render(request, "formulario_buscar_propiedad.html")
-"""
+
 
 # lo dejo asi para mostrar otra forma de cargar datos y tenerlo sin filtro para futuras pruebas
 def alta_propiedad(request):
