@@ -15,13 +15,12 @@ def buscar_propiedad(request):
 
 def buscar_pro(request):
     if request.method == "POST":
-        if request.POST['dimensiones']:
-            dimensiones= request.POST['dimensiones']
-            Propiedades=Propiedad.objects.filter(titular__icontains = dimensiones)
-            return render(request, "resultado_busqueda_propiedades.html", {"Propiedades": Propiedades})
-        else:
-            #return HttpResponse("no busco nada!")
-            return render(request, "error.html")
+        dimensiones= request.POST['dimensiones']
+        Propiedades=Propiedad.objects.filter(dimensiones__icontains = dimensiones)
+        return render(request, "resultado_busqueda_propiedades.html", {"Propiedades": Propiedades})
+    else:
+        return render(request, "error.html")
+
     
     
     return render(request, "formulario_buscar_propiedad.html")
