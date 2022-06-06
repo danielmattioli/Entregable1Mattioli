@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from Appinmob import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("Appin/", include("Appinmob.urls"))
+    path("Appin/", include("Appinmob.urls")),
+    path("", views.inicio)
+
 ]

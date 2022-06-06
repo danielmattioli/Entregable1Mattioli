@@ -4,12 +4,12 @@
 
 {% block contenido %}
 
-{% if Propiedades %} 
+{% if martillero %} 
 <ul style="margin: auto; width: 220px;">
-    {% for prop in Propiedades %}
-    <li>TITULAR: {{prop.titular}}</li>
-    <li>UBUCACION: {{prop.ubicacion}}</li>
-    <li>DIMENSIONES: {{prop.dimensiones}}</li>
+    {% for marti in martillero %}
+    <li>TITULAR: {{marti.Apellido}}</li>
+    <li>TITULAR: {{marti.nombre}}</li>
+    <li>TITULAR: {{marti.dni}}</li>
     {% endfor %}
 </ul>
 {% else %}

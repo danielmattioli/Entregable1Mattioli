@@ -1,0 +1,15 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<form style="margin: auto; width: 220px;" action="buscar_vent" method="POST">
+    {% csrf_token %}
+
+    <p>Ingrese nombre del martillero que realizo la venta:</p>
+    <input type="text" name = "venta" required>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}

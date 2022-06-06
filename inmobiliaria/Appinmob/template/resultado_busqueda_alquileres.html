@@ -4,12 +4,11 @@
 
 {% block contenido %}
 
-{% if Propiedades %} 
+{% if alquileres %} 
 <ul style="margin: auto; width: 220px;">
-    {% for prop in Propiedades %}
-    <li>TITULAR: {{prop.titular}}</li>
-    <li>UBUCACION: {{prop.ubicacion}}</li>
-    <li>DIMENSIONES: {{prop.dimensiones}}</li>
+    {% for dueños in alquileres %}
+    <li>DUEÑO: {{dueños.dueño}}</li>
+    <li>INQUILINO: {{dueños.inquilino}}</li>
     {% endfor %}
 </ul>
 {% else %}

@@ -8,22 +8,18 @@ from Appinmob.forms import *
 def inicio(request):
     return render(request, "inicio.html")
 
+#carga formularion para buscar una propiedad
 def buscar_propiedad(request):
     return render (request, "buscar_propiedad.html")
 
-#Verificar codigo de busqueda. posee falla aun no encontrada
-
+#busco por dimension
 def buscar_pro(request):
     if request.method == "POST":
         dimensiones= request.POST['dimensiones']
         Propiedades=Propiedad.objects.filter(dimensiones__icontains = dimensiones)
         return render(request, "resultado_busqueda_propiedades.html", {"Propiedades": Propiedades})
-    else:
-        return render(request, "error.html")
-
-    
-    
     return render(request, "formulario_buscar_propiedad.html")
+
 
 
 # lo dejo asi para mostrar otra forma de cargar datos y tenerlo sin filtro para futuras pruebas
@@ -77,3 +73,35 @@ def alta_contacto(request):
             db.save()
         return render(request, "formulario_alta_contacto.html")
     return render(request, "formulario_alta_contacto.html")
+
+#Muestra formulario de busquda de ventas
+def busca_venta(request):
+    return render (request, "formulario_buscar_venta.html")
+
+#realizo la busqueda en la db
+def buscar_vent(request):
+    if request.method == "POST":
+        vendedor= request.POST['venta']
+        datos=Venta.objects.filter(nombremartillero__icontains = vendedor)
+        return render(request, "resultado_busqueda_ventas.html", {"vendedores": datos})
+
+    return render (request, "resultado_busqueda_ventas.html")
+
+
+def buscar_alquiler(request):
+    return render (request, "formulario_buscar_alquiler.html")
+
+def buscar_alqui(request):
+    if request.method == "POST":
+        dueño = request.POST['titular']
+        datos = Alquiler.objects.filter(dueño__icontains = dueño)
+    return render (request, "resultado_busqueda_alquileres.html", {"alquileres": datos})
+
+def buscar_martillero(request):
+    return render (request, "formulario_buscar_martillero.html")
+
+def buscar_marti(request):
+    if request.method == "POST":
+        martillero = request.POST['apellido']
+        datos = Martillero.objects.filter(Apellido__icontains = martillero)
+    return render (request, "resultado_busqueda_martillero.html", {"martillero": datos})

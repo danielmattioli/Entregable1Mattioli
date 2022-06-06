@@ -4,12 +4,11 @@
 
 {% block contenido %}
 
-{% if Propiedades %} 
+{% if vendedores %} 
 <ul style="margin: auto; width: 220px;">
-    {% for prop in Propiedades %}
-    <li>TITULAR: {{prop.titular}}</li>
-    <li>UBUCACION: {{prop.ubicacion}}</li>
-    <li>DIMENSIONES: {{prop.dimensiones}}</li>
+    {% for vendedor in vendedores %}
+    <li>TITULAR: {{vendedor.nombremartillero}}</li>
+    <li>COMPRADOR: {{vendedor.comprador}}</li>
     {% endfor %}
 </ul>
 {% else %}
